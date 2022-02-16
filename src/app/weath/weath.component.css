@@ -1,0 +1,184 @@
+.stretch-card>.card {
+    width: 100%;
+    min-width: 100%;
+}
+
+body{
+    background-color: #f9f9fa;
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex:1 1 auto;
+    flex: 1 1 auto;
+}
+
+@media (max-width:991.98px) {
+    .padding {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width:797.98px) {
+    .padding {
+        padding: 1rem;
+    }
+}
+
+.padding {
+    padding: 5rem;
+}
+
+.grid-margin,.purchase-popup>div {
+    margin-bottom: 25px;
+}
+
+.card {
+    border: 0;
+    border-radius: 25px;
+}
+
+
+/* .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 0.25rem;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.125);
+} */
+
+
+.card .card-body{
+    padding: 1.88rem 1.81rem;
+}
+
+.card-body{
+    flex: 1 1 auto;
+    padding:1.25rem;
+   
+}
+
+.card-weather .weather-date-location{
+    padding: 0 0 38px;
+}
+
+.h3,
+h3{
+    font-size: 1.56rem;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5.h6{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
+
+
+
+p{
+    font-size: 13px;
+}
+
+.text-gray,.card-subtitle,.new-accounts ul.chats li.chat-persons a p.joined-date{
+    color: #969696;
+}
+
+.card-weather.weather-data{
+    padding: 0 0 4.75rem;
+}
+
+.mr-auto,.mx-auto{
+    margin-right: auto !important;
+}
+
+.card-weather.weakly-weather{
+    background: #ffffff;
+    overflow-x: auto;
+}
+
+.card-weather.card-body{
+    background: #ffffff;
+}
+
+.card-weather.weakly-weather.weakly-weather-item{
+    padding: 1rem;
+    border-right: 1px solid #f2f2f2;
+    flex: 0 0 14.28%;
+    text-align: center;
+}
+
+.display-3{
+    font-size: 2.5rem;
+}
+
+.card-weather.weakly-weather.weakly-weather-item i{
+    font-size: 1.2rem;
+}
+
+.mb-0,.mb-0{
+    margin-bottom: 0 !important;
+}
+
+.card-weather {
+    background: #e1ecff;
+    background-image: linear-gradient(to left bottom, #ffce2d, #fde55b, #ffe15b, #ffffff, #ffffff)
+}
+
+
+.weakly-weather-item{
+    margin-left: 7%;
+    margin-top: 5%;
+    
+    padding: 2%;
+}
+
+.card-body{
+    height: 1650%;
+}
+.hai{
+    margin-left: 10%;
+}
+
+#hey{
+    margin-left: -5%;
+    margin-top: 14%;
+}
+
+i{
+    color: grey;
+}
+
+.hw{
+    margin-left: 60%;
+    margin-top: 10%;
+
+}
+button{
+    border-color: #b6b2b2;    
+   
+}
+
+.mb{
+    font-size: 50px;
+}
+
+.search{
+padding: 20px;
+    
+    
+}
+
+input{
+    border-radius: 10px;
+    
+    width: 80%;
+    height: 40px;
+    
+}
+
+.btn{
+    margin-left: 3%;
+}
