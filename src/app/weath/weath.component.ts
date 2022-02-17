@@ -16,6 +16,7 @@ const icons = {
 export class WeathComponent implements OnInit {
   weather: any = {};
   dailyForecast: any = [];
+  hourlyForecast: any = [];
   city = '';
   constructor(private service: DataService) { }
 
@@ -55,6 +56,28 @@ export class WeathComponent implements OnInit {
             return acc;
           }, []);
           console.log('cccc', this.dailyForecast);
+
+          this.hourlyForecast = data.hourly.reduce(
+            (acc: any, hourlyData: any, index: number) => {
+              if (index % 3 === 0 && index < 24) {
+                const hrString =
+                  index > 12
+                    ? `${index - 12} PM`
+                    : index < 1
+                    ? '12 AM'
+                    : index > 11
+                    ? `${index} PM`
+                    : `${index} AM`;
+                acc.push({
+                  temp: hourlyData.temp,
+                  hour: hrString,
+                });
+              }
+
+              return acc;
+            },
+            []
+          );
         });
     });
   }

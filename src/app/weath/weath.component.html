@@ -11,7 +11,7 @@
                     <div class=" d-flex justify-content-between mt-5">
                         <div class="items d-flex justify-content-between align-items-center">
                             <div class="me-5"><i class="fa-solid fa-cloud" id="temp"> </i></div>
-                            <div>
+                            <div *ngIf="weather.main">
                                 <p class="title"><b>{{ weather.name }}</b></p>
                                 <p>Longitude : {{ weather.coord.lon }}</p>
                                 <p>Latitude : {{ weather.coord.lat }}</p>
@@ -34,6 +34,19 @@
 
                     </div>
                 </div>
+                <div class="card-body p-0">
+                    <div class="d-flex weakly-weather">
+                      <div class="weakly-weather-item" *ngFor="let data of hourlyForecast">
+                        <p class="mb-0">
+                          <b>{{ data.hour }} </b>
+                        </p>
+                        <p class="mb-0">
+                          <b>{{ data.temp }}°C </b>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                 <div class="card-body p-0">
                     <div class="d-flex weakly-weather">
                         <div class="weakly-weather-item" *ngFor="let data of dailyForecast ">
