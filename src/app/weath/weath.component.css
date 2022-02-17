@@ -38,20 +38,6 @@ body{
     border-radius: 25px;
 }
 
-
-/* .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    border-radius: 0.25rem;
-    background-clip: border-box;
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,0.125);
-} */
-
-
 .card .card-body{
     padding: 1.88rem 1.81rem;
 }
@@ -129,36 +115,36 @@ p{
 
 
 .weakly-weather-item{
-    margin-left: 7%;
+    margin-left: 5%;
     margin-top: 5%;
-    
+    font-size: 50px;
     padding: 2%;
 }
 
 .card-body{
     height: 1650%;
 }
-.hai{
+
+
+.items{
     margin-left: 10%;
+    font-size: 50px;
 }
 
-#hey{
+#temp{
     margin-left: -5%;
     margin-top: 14%;
 }
 
 i{
     color: grey;
+  
 }
 
 .hw{
     margin-left: 60%;
     margin-top: 10%;
 
-}
-button{
-    border-color: #b6b2b2;    
-   
 }
 
 .mb{
@@ -181,4 +167,34 @@ input{
 
 .btn{
     margin-left: 3%;
+}
+
+.weather-datas{
+    margin-left: 68%;
+}
+
+.weather-details{
+    display: flex;
+    flex-direction: row;
+}
+
+.list{
+    border: solid 1px black;
+    background-color: rgb(226, 226, 226);
+    color: black;
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+}
+.weather-items {
+    position: relative;
+    top:30%;
+    right: 50%;
+}
+
+.title{
+    font-size: 35px;
+    letter-spacing: 8px;
+    
 }

@@ -1,69 +1,45 @@
-<div class="page-content page-container" id="page-content" >
+<div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
             <div class="card card-weather">
-                
+
                 <div class="card-body">
                     <div class="search">
-                        <input type="text" (keyup)="getCity($event)" placeholder="search..."> 
-                        <button class="btn btn-warning" (click)="getCity($location_name)"><b>FETCH</b></button>
+                        <input type="text" [(ngModel)]="city" placeholder="Enter the city name...">
+                        <button class="btn btn-warning" (click)="loadData()"><b>SEARCH</b></button>
                     </div>
-                    <div class="weather-date-location">
-                        <div class="hai">
-                        <i class="fa-solid fa-cloud" id="hey"> </i><div></div>
-
-                        <!-- <p class="text-gray"><span class="weather-date">25 March, 2019 </span><span class="weathe-loaction">Sydney, Austrailia</span></p> -->
-
-                    </div>
-
-                    <p *ngFor="let weather" >
-                        temp:{{weather.temp}}
-                        humidity:{{weather.humidity}}
-                        wind:{{weather.wind}}
-                    </p>
-
-                    <div class="weather-data d-flex">
-                        <div class="hw">
-                            
-                            <button><b>Temperature</b></button>
-                            <button><b>Precipitation</b></button>
-                            <button><b>Wind</b></button>
-                          
+                    <div class=" d-flex justify-content-between mt-5">
+                        <div class="items d-flex justify-content-between align-items-center">
+                            <div class="me-5"><i class="fa-solid fa-cloud" id="temp"> </i></div>
+                            <div>
+                                <p class="title"><b>{{ weather.name }}</b></p>
+                                <p>Longitude : {{ weather.coord.lon }}</p>
+                                <p>Latitude : {{ weather.coord.lat }}</p>
+                                <p>{{ weather.main.temp }}°C</p>
+                                <p>{{ weather["weather"][0].description }}</p>
+                            </div>
                         </div>
+                        <div class=" d-flex float-end">
+                            <div class="d-flex justify-content-between ">
+                                <p class="list me-3"><b>Temperature</b></p>
+                                <p class="list me-3"><b>Humidity</b></p>
+                                <p class="list me-3"><b>Wind</b></p>
+                            </div>
+                            <div class="weather-items" *ngIf="weather.main">
+                                <p>Temperature : {{ weather.main.temp }}°C</p>
+                                <p>humidity : {{ weather.main.humidity }}%</p>
+                                <p>wind : {{ weather.wind.speed }} Km/h</p>
+                            </div>
+                        </div>
+
                     </div>
-                    
                 </div>
-            </div>
                 <div class="card-body p-0">
                     <div class="d-flex weakly-weather">
-                        <div class="weakly-weather-item">
-                            <p class="mb-0"> <b>Sun </b></p> <i class="fa-solid fa-cloud"></i>
-                            <p class="mb-0"> <b>30° </b></p>
-                        </div>
-                       
-                        <div class="weakly-weather-item">
-                            <p class="mb-1"> <b>Mon </b></p> <i class="fa-solid fa-cloud-sun"></i>
-                            <p class="mb-0"> <b>31° </b></p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1"><b>Tue </b> </p> <i class="fa-solid fa-cloud-meatball"></i>
-                            <p class="mb-0"><b> 28° </b></p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1"> <b>Wed </b></p> <i class="fa-solid fa-cloud-showers-heavy"></i>
-                            <p class="mb-0"> <b>30° </b></p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1"> <b>Thu </b></p> <i class="fa-solid fa-cloud-showers-heavy"></i>
-                            <p class="mb-0"><b> 29° </b></p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1"><b> Fri</b> </p> <i class="fa-solid fa-cloud-moon-rain"></i>
-                            <p class="mb-0"><b> 31°</b> </p>
-                        </div>
-                        <div class="weakly-weather-item">
-                            <p class="mb-1"><b> Sat</b> </p> <i class="fa-solid fa-smog"></i>
-                            <p class="mb-0"><b>32°</b> </p>
+                        <div class="weakly-weather-item" *ngFor="let data of dailyForecast ">
+                            <p class="mb-0"> <b>{{data.day}}</b></p> <i [ngClass]="data.icon"></i>
+                            <p class="mb-0"> <b>{{data.temp}}°C</b></p>
+
                         </div>
                     </div>
                 </div>

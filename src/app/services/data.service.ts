@@ -1,29 +1,39 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Weather } from '../model/weather.model';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-// url='https://api.openweathermap.org/data/2.5/weather';
-// apiKey='82d46d6905d4f40d04122639600fe05e';
+
   constructor(private http: HttpClient) { }
 
   get(url: string, options?: any) {
     return this.http.get(url, options);
   }
 
-  getData() {
-    return this.http.get<Weather>('https://api.openweathermap.org/data/2.5/weather?q=${location_name}&appid=82d46d6905d4f40d04122639600fe05e&units=metric');
+  getWeather(city: string) {
+    console.log(city);
+
+    let params = new HttpParams()
+      .set('q', city)
+      .set('appId', environment.apiKey)
+      .set('units', 'metric')
+    return this.http.get(`${environment.apiUrl}/weather`, {
+      params,
+    });
   }
 
-//   getWeatherDataByCityName(city:string){
-// let params=new HttpParams()
-// .set('q',city)
-// .set('units','imperial')
-// .set('appid',this.apiKey)
+  getDailyForcast(lat: string, lon: string) {
 
-// return this.http.get(this.url,{params});
-//   }
-// }
+    let params = new HttpParams()
+      .set('lat', lat)
+      .set('lon', lon)
+      .set('appId', environment.apiKey)
+      .set('units', 'metric')
+    return this.http.get(`${environment.apiUrl}/onecall`, {
+      params,
+    });
+  }
+
 }
